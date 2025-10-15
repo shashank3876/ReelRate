@@ -28,6 +28,8 @@ function App() {
 
         try {
             const response = await axiosClient.post("/logout",{user_id: auth.user_id});
+            console.log("LOGOUT RESPONSE:");
+            
             console.log(response.data);
             setAuth(null);
            // localStorage.removeItem('user');

@@ -9,6 +9,7 @@ const Movies = ({ movies, updateMovieReview, message }) => {
       </div>
     );
   }
+ 
   
 
   return (
