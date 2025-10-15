@@ -1,19 +1,87 @@
 .movie-card {
-    transition: transform 0.2s;
-
+  background: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  text-align: center;
 }
+
 .movie-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    z-index: 2;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
 }
-.play-icon-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 3rem;
-    color: #fff;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    transition: opacity 0.2s;
 
+.movie-image-container {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-poster {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Fills the card fully */
+  transition: transform 0.4s ease-in-out, filter 0.3s ease;
+}
+
+.movie-card:hover .movie-poster {
+  filter: brightness(0.8);
+  transform: scale(1.08);
+}
+
+.play-icon-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  font-size: 3rem;
+  color: white;
+  text-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.movie-card:hover .play-icon-overlay {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.movie-info {
+  padding: 1rem;
+}
+
+.movie-title {
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.movie-id {
+  font-size: 0.85rem;
+}
+
+.review-btn {
+  font-weight: 600;
+  border-radius: 20px;
+  transition: all 0.3s ease;
+}
+
+.review-btn:hover {
+  background: #e50914;
+  color: #fff;
+  border-color: #e50914;
+}
+
+/* Responsive fixes */
+@media (max-width: 768px) {
+  .movie-image-container {
+    height: 280px;
+  }
 }
